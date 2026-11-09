@@ -1,8 +1,9 @@
-import "dotenv/config";
-import app from "./app.js";
+import { app } from './app.js';
+import { env } from './config/env.js';
+import { Temporal } from '@js-temporal/polyfill'
 
-const PORT = Number(process.env.PORT) || 3000;
+Object.assign(globalThis, { Temporal })
 
-app.listen(PORT, () => {
-    console.log(`LMS API running at http://localhost:${PORT}`);
+app.listen(env.PORT, () => {
+  console.log(`LearnHub API running on http://localhost:${env.PORT}`);
 });

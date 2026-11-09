@@ -8,7 +8,12 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src/**/*.ts'],
-      exclude: ['src/prisma/**', 'src/**/*.d.ts'],
+      exclude: [
+        'src/prisma/**',
+        'src/**/*.d.ts',
+        'src/server.ts',
+        'src/**/*.types.ts',
+      ],
     },
   },
 })
