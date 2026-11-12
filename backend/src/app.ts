@@ -7,6 +7,7 @@ import userRoutes from './modules/users/user.routes.js'
 import categoryRoutes from './modules/categories/category.routes.js'
 import courseRoutes from './modules/courses/course.routes.js'
 import sectionRoutes from './modules/sections/section.routes.js'
+import lessonRoutes from './modules/lessons/lesson.routes.js'
 import { errorHandler } from './middleware/errorHandler.js'
 
 export const app = express()
@@ -44,6 +45,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/categories', categoryRoutes)
 app.use('/api/courses/', courseRoutes)
-app.use('/api', sectionRoutes);
+app.use('/api', sectionRoutes)
+app.use('/api', lessonRoutes)
 
 app.use(errorHandler)
